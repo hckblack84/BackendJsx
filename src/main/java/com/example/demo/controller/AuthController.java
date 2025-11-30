@@ -28,29 +28,35 @@ public class AuthController {
     @PostMapping("/register")
     public ResponseEntity<?> register(@RequestBody Map<String, String> body) {
         try {
+            // ⭐ CAMBIO 1: Extraer el campo 'username' que ahora es independiente
             String username = body.get("username");
+            String useremail = body.get("useremail");
             String password = body.get("password");
-            String role = body.getOrDefault("role", "USER"); // Por defecto USER
+            String role = body.getOrDefault("role", "USER");
 
-            if (username == null || password == null || username.isBlank() || password.isBlank()) {
+            // ⭐ CAMBIO 2: Validar que el nuevo campo 'username' también esté presente
+            if (username == null || useremail == null || password == null ||
+                    username.isBlank() || useremail.isBlank() || password.isBlank()) {
                 return ResponseEntity.badRequest()
-                        .body(Map.of("error", "Username y password son requeridos"));
+                        .body(Map.of("error", "Username, useremail, y password son requeridos para el registro"));
             }
-
 
             if (!role.equals("USER") && !role.equals("ADMIN")) {
                 role = "USER";
             }
 
-            userService.register(username, password, role);
+            // ⭐ CAMBIO 3: Llamar al método register de 4 parámetros, ahora con todos los campos separados
+            userService.register(username, useremail, password, role);
+
             return ResponseEntity.ok(Map.of(
                     "message", "Usuario registrado correctamente",
                     "role", role
             ));
 
         } catch (Exception e) {
+            // Se asume que el error es por unicidad de username o email (columna unique=true en User.java)
             return ResponseEntity.status(HttpStatus.CONFLICT)
-                    .body(Map.of("error", "El usuario ya existe"));
+                    .body(Map.of("error", "El usuario ya existe (Username o Email ya registrados)"));
         }
     }
 
@@ -58,9 +64,16 @@ public class AuthController {
     @PostMapping("/login")
     public ResponseEntity<?> login(@RequestBody Map<String, String> body) {
         try {
+            // ⭐ CAMBIO 4: Usamos 'username' en el login, ya que es el identificador único en la BBDD
             String username = body.get("username");
             String password = body.get("password");
 
+            if (username == null || password == null || username.isBlank() || password.isBlank()) {
+                return ResponseEntity.badRequest()
+                        .body(Map.of("error", "Username y password son requeridos para iniciar sesión"));
+            }
+
+            // Usamos el username para la autenticación
             Authentication auth = authManager.authenticate(
                     new UsernamePasswordAuthenticationToken(username, password));
 
@@ -74,7 +87,7 @@ public class AuthController {
                 return ResponseEntity.ok(Map.of(
                         "token", token,
                         "username", username,
-                        "role", user.getRole() // Devolver rol
+                        "role", user.getRole()
                 ));
             }
 
@@ -83,7 +96,7 @@ public class AuthController {
 
         } catch (BadCredentialsException e) {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED)
-                    .body(Map.of("error", "Usuario o contraseña incorrectos"));
+                    .body(Map.of("error", "Nombre de usuario o contraseña incorrectos"));
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
                     .body(Map.of("error", "Error al procesar la solicitud"));
