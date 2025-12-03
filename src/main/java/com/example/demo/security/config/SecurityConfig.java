@@ -45,14 +45,22 @@ public class SecurityConfig {
                 .sessionManagement(sess -> sess.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authenticationProvider(authenticationProvider())
                 .authorizeHttpRequests(auth -> auth
+                        // Rutas Públicas
                         .requestMatchers("/api/auth/**").permitAll()
                         .requestMatchers("/h2-console/**").permitAll()
                         .requestMatchers("/v3/api-docs/**", "/swagger-ui/**").permitAll()
-                        .requestMatchers("/api/products/**").permitAll()
-                        // CAMBIO: Proteger el perfil
-                        .requestMatchers("/api/users/profile/**").authenticated() // Requiere autenticación
-                        .requestMatchers("/api/users/**").permitAll() // Otros endpoints de users públicos
+                        .requestMatchers("/api/products/**").permitAll() // La API de productos es pública
+
+                        // Rutas Protegidas por Rol
                         .requestMatchers("/admin/**").hasRole("ADMIN")
+
+                        // Rutas Protegidas (Requiere solo login)
+                        // Nota: Si /api/users/profile es la ÚNICA que requiere login
+                        // y todas las demás operaciones de /api/users/* son ADMIN (ejemplo de arriba), el orden funciona.
+                        // Si quieres proteger TODAS las operaciones de /api/users/*, usa .authenticated() aquí:
+                        .requestMatchers("/api/users/**").authenticated()
+
+                        // Asegura que CUALQUIER otra solicitud no listada requiere autenticación
                         .anyRequest().authenticated()
                 )
                 .addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class)
