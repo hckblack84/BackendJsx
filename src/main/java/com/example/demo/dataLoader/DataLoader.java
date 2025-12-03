@@ -66,7 +66,7 @@ public class DataLoader implements CommandLineRunner, LinkImages {
 
 
         Product  torta3  = Product.builder()
-                .name("tora de frutillas")
+                .name("Pastel Selva Negra")
                 .categories("Pasteles")
                 .price(1000)
                 .image(pastel4)
@@ -76,7 +76,7 @@ public class DataLoader implements CommandLineRunner, LinkImages {
                 .build();
 
         Product  torta4  = Product.builder()
-                .name("tora de frutillas")
+                .name("Pastel de Zanahoria")
                 .categories("Pasteles")
                 .price(1000)
                 .image(pastel5)
@@ -86,7 +86,7 @@ public class DataLoader implements CommandLineRunner, LinkImages {
                 .build();
 
         Product  torta5  = Product.builder()
-                .name("tora de frutillas")
+                .name("Tiramisú")
                 .categories("Pasteles")
                 .price(1000)
                 .image(pastel6)
@@ -96,7 +96,7 @@ public class DataLoader implements CommandLineRunner, LinkImages {
                 .build();
 
         Product  muffins1  = Product.builder()
-                .name("tora de frutillas")
+                .name("hispas de Chocolate")
                 .categories("muffins")
                 .price(1000)
                 .image(muffin1)
@@ -106,7 +106,7 @@ public class DataLoader implements CommandLineRunner, LinkImages {
                 .build();
 
         Product  muffins2  = Product.builder()
-                .name("tora de frutillas")
+                .name("Muffins de Arándanos")
                 .categories("muffins")
                 .price(1000)
                 .image(muffin2)
@@ -116,7 +116,7 @@ public class DataLoader implements CommandLineRunner, LinkImages {
                 .build();
 
         Product  muffins3  = Product.builder()
-                .name("tora de frutillas")
+                .name("Muffins de Plátano y Nueces")
                 .categories("muffins")
                 .price(1000)
                 .image(muffin3)
@@ -127,7 +127,7 @@ public class DataLoader implements CommandLineRunner, LinkImages {
 
 
         Product  Galletas1  = Product.builder()
-                .name("tora de frutillas")
+                .name("Galletas con Chispas de Chocolate")
                 .categories("Galletas")
                 .price(1000)
                 .image(Galleta1)
@@ -138,7 +138,7 @@ public class DataLoader implements CommandLineRunner, LinkImages {
 
 
         Product  Galletas2  = Product.builder()
-                .name("tora de frutillas")
+                .name("Galletas de Avena")
                 .categories("Galletas")
                 .price(1000)
                 .image(Galleta2)
@@ -150,8 +150,8 @@ public class DataLoader implements CommandLineRunner, LinkImages {
 
 
         Product  Galletas3  = Product.builder()
-                .name("tora de frutillas")
-                .categories("Galleta")
+                .name("Galletas de Mantequilla")
+                .categories("Galletas")
                 .price(1000)
                 .image(Galleta3)
                 .stock(true)
@@ -162,7 +162,7 @@ public class DataLoader implements CommandLineRunner, LinkImages {
 
 
         Product  Donuts2 = Product.builder()
-                .name("tora de frutillas")
+                .name("Donut Relleno de Mermelada")
                 .categories("Donuts")
                 .price(1000)
                 .image(Donut2)
@@ -173,7 +173,7 @@ public class DataLoader implements CommandLineRunner, LinkImages {
 
 
         Product  Donuts3 = Product.builder()
-                .name("tora de frutillas")
+                .name("Donut Relleno de Crema Bávara")
                 .categories("Donuts")
                 .price(1000)
                 .image(Donut3)
@@ -183,7 +183,7 @@ public class DataLoader implements CommandLineRunner, LinkImages {
                 .build();
 
         Product  Donuts4 = Product.builder()
-                .name("tora de frutillas")
+                .name("Donut Glaseado Clásico")
                 .categories("Donuts")
                 .price(1000)
                 .image(Donut4)
@@ -235,7 +235,7 @@ public class DataLoader implements CommandLineRunner, LinkImages {
                 .build();
 
         Product  POSTR5 = Product.builder()
-                .name("tora de frutillas")
+                .name("Mousse de Chocolate")
                 .categories("Postres")
                 .price(1000)
                 .image(Donut4)
