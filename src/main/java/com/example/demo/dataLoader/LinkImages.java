@@ -18,5 +18,5 @@ public interface LinkImages {
     String  Donut3= "https://i.pinimg.com/1200x/97/43/a6/9743a65ff23f544b6f21f15d830538b7.jpg";
     String  Donut4= "https://i.pinimg.com/736x/2d/a0/de/2da0de886733ecd877ba0883ef980470.jpg";
 
-
+    String Pan_duro = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSv8ltXNvsrFYOelIOC9JgV_KjJmOF7gqexA&s";
 }
