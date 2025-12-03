@@ -33,17 +33,220 @@ public class DataLoader implements CommandLineRunner, LinkImages {
 
         // Producto original de tu código
         Product originalProduct = Product.builder()
-                .name("Audifonos muy gamer")
+                .name("pastel de chocolate")
                 .categories("Pasteles")
                 .price(1000)
-                .image(AUDIFONOS_GAMER)
+                .image(pastel1)
                 .stock(true)
                 .discount(false)
                 .stars(2)
                 .build();
 
 
-        List<Product> products = Arrays.asList(originalProduct);
+        Product  torta1  = Product.builder()
+                .name("tora de frutillas")
+                .categories("Pasteles")
+                .price(1000)
+                .image(pastel2)
+                .stock(true)
+                .discount(false)
+                .stars(5)
+                .build();
+
+
+        Product  torta2  = Product.builder()
+                .name("Torta Tres Leches")
+                .categories("Pasteles")
+                .price(1000)
+                .image(pastel3)
+                .stock(true)
+                .discount(false)
+                .stars(5)
+                .build();
+
+
+        Product  torta3  = Product.builder()
+                .name("tora de frutillas")
+                .categories("Pasteles")
+                .price(1000)
+                .image(pastel4)
+                .stock(true)
+                .discount(false)
+                .stars(5)
+                .build();
+
+        Product  torta4  = Product.builder()
+                .name("tora de frutillas")
+                .categories("Pasteles")
+                .price(1000)
+                .image(pastel5)
+                .stock(true)
+                .discount(false)
+                .stars(5)
+                .build();
+
+        Product  torta5  = Product.builder()
+                .name("tora de frutillas")
+                .categories("Pasteles")
+                .price(1000)
+                .image(pastel6)
+                .stock(true)
+                .discount(false)
+                .stars(5)
+                .build();
+
+        Product  muffins1  = Product.builder()
+                .name("tora de frutillas")
+                .categories("muffins")
+                .price(1000)
+                .image(muffin1)
+                .stock(true)
+                .discount(false)
+                .stars(5)
+                .build();
+
+        Product  muffins2  = Product.builder()
+                .name("tora de frutillas")
+                .categories("muffins")
+                .price(1000)
+                .image(muffin2)
+                .stock(true)
+                .discount(false)
+                .stars(5)
+                .build();
+
+        Product  muffins3  = Product.builder()
+                .name("tora de frutillas")
+                .categories("muffins")
+                .price(1000)
+                .image(muffin3)
+                .stock(true)
+                .discount(false)
+                .stars(5)
+                .build();
+
+
+        Product  Galletas1  = Product.builder()
+                .name("tora de frutillas")
+                .categories("Galletas")
+                .price(1000)
+                .image(Galleta1)
+                .stock(true)
+                .discount(false)
+                .stars(5)
+                .build();
+
+
+        Product  Galletas2  = Product.builder()
+                .name("tora de frutillas")
+                .categories("Galletas")
+                .price(1000)
+                .image(Galleta2)
+                .stock(true)
+                .discount(false)
+                .stars(5)
+                .build();
+
+
+
+        Product  Galletas3  = Product.builder()
+                .name("tora de frutillas")
+                .categories("Galleta")
+                .price(1000)
+                .image(Galleta3)
+                .stock(true)
+                .discount(false)
+                .stars(5)
+                .build();
+
+
+
+        Product  Donuts2 = Product.builder()
+                .name("tora de frutillas")
+                .categories("Donuts")
+                .price(1000)
+                .image(Donut2)
+                .stock(true)
+                .discount(false)
+                .stars(5)
+                .build();
+
+
+        Product  Donuts3 = Product.builder()
+                .name("tora de frutillas")
+                .categories("Donuts")
+                .price(1000)
+                .image(Donut3)
+                .stock(true)
+                .discount(false)
+                .stars(5)
+                .build();
+
+        Product  Donuts4 = Product.builder()
+                .name("tora de frutillas")
+                .categories("Donuts")
+                .price(1000)
+                .image(Donut4)
+                .stock(true)
+                .discount(false)
+                .stars(5)
+                .build();
+
+        Product  POSTR1 = Product.builder()
+                .name("tora de frutillas")
+                .categories("Postres")
+                .price(1000)
+                .image(Donut4)
+                .stock(true)
+                .discount(false)
+                .stars(5)
+                .build();
+
+
+        Product  POSTR2 = Product.builder()
+                .name("tora de frutillas")
+                .categories("Postres")
+                .price(1000)
+                .image(Donut4)
+                .stock(true)
+                .discount(false)
+                .stars(5)
+                .build();
+
+
+        Product  POSTR3 = Product.builder()
+                .name("tora de frutillas")
+                .categories("Postres")
+                .price(1000)
+                .image(Donut4)
+                .stock(true)
+                .discount(false)
+                .stars(5)
+                .build();
+
+        Product  POSTR4 = Product.builder()
+                .name("tora de frutillas")
+                .categories("Postres")
+                .price(1000)
+                .image(Donut4)
+                .stock(true)
+                .discount(false)
+                .stars(5)
+                .build();
+
+        Product  POSTR5 = Product.builder()
+                .name("tora de frutillas")
+                .categories("Postres")
+                .price(1000)
+                .image(Donut4)
+                .stock(true)
+                .discount(false)
+                .stars(5)
+                .build();
+
+
+        List<Product> products = Arrays.asList(originalProduct,torta1,torta2,torta3,torta4,torta5,muffins1,muffins2,muffins3,Galletas1,Galletas2,Galletas3,Donuts2,Donuts3,Donuts4, POSTR1,POSTR2,POSTR3,POSTR4,POSTR5);
+
 
         productRepository.saveAll(products);
 
